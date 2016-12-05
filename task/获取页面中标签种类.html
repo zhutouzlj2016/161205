@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jQuery1.12/jquery-1.12.2.js"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				var doms = document.getElementsByTagName("*");
+				//类数组转换成数组
+//				var domArr = Array.from(doms);
+				var arr = [];
+				function dom(obj){
+					for(var i = 0;i<obj.length;i++){
+						arr.push(obj[i]);
+					}
+					return arr;
+				}
+				dom(doms);
+				var newArr = []
+				for(var i = 0;i<arr.length;i++){
+					newArr.push(arr[i].tagName)
+				}
+				var newDomsArr = [];
+				for(var i = 0;i<newArr.length;i++){
+					if(newDomsArr.indexOf(newArr[i]) == -1){
+						newDomsArr.push(newArr[i])
+					}
+				}
+				console.log(newDomsArr)
+//				new Set([...document.querySelectorAll('*')].map(v => v.tagName));
+				new Set(Array.from(document.querySelectorAll('*')).map(v => v.tagName));
+			}
+		</script>
+	</head>
+	<body>
+		<header>
+			<div></div>
+		</header>
+		<div>
+			<div>
+				<ul>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+		<table border="" cellspacing="" cellpadding="">
+			<tr><th>Header</th></tr>
+			<tr><td>Data</td></tr>
+		</table>
+		<input type="" name="" id="" value="" />
+	</body>
+</html>
